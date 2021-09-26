@@ -1,13 +1,13 @@
-function reverseString(data) {
-    var listCharacters = data.split("");
+function reverseString(date) {
+    var listCharacters = date.split("");
     var reverseListCharacters = listCharacters.reverse();
     var stringReversed = reverseListCharacters.join("");
     return stringReversed; 
 }
 
-function checkPalindrome(data) {
-    var reverseStringCheck = reverseString(data);
-   if (data === reverseStringCheck) {
+function checkPalindrome(date) {
+    var reverseStringCheck = reverseString(date);
+   if (date === reverseStringCheck) {
        return true; 
    } else {
        return false;
@@ -49,12 +49,22 @@ function convertDate(date) {
     return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yyddmm];
 }
 
-var data = {
-    day: 5,
-    month: 4,
-    year: 2021
+function checkAllPalindromes(date) {
+    var listAllPalindromes = convertDate(date);
+    var checkValue = [];
+
+    for(var i=0; i<listAllPalindromes.length; i++) {
+    var result = checkPalindrome(listAllPalindromes[i]); checkValue.push(result); 
+    } return checkValue;
 }
 
-var dataNumberString = convertNumber(data);
 
-console.log(convertDate(dataNumberString));
+var realValue = {
+    day: 29,
+    month: 11,
+    year: 1992
+}
+
+var dateString = convertNumber(realValue);
+
+console.log(checkAllPalindromes(dateString));
