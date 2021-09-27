@@ -126,12 +126,16 @@ function palindromeDateCheck(date) {
     }
 }
 
+var inputDate = document.querySelector("#input-date");
+var showButton = document.querySelector("#show-button");
+var output = document.querySelector("#output");
 
-var realValue = {
-    day: 5,
-    month: 1,
-    year: 2020
+function clickHandler(e) {
+    var bdayString = inputDate.value;
+    if (bdayString !=="") {
+        console.log(bdayString)
+    }
 }
 
+showButton.addEventListener("click", clickHandler)
 
-console.log(palindromeDateCheck(realValue));
