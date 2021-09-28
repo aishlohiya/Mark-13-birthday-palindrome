@@ -7,7 +7,7 @@ function reverseStr(str) {
 
 function isPalindrome(str) {
     var reverse = reverseStr(str);
-    return str = reverse;
+    return str === reverse;
 }
 
 function convertDateToString(date) {
@@ -148,7 +148,7 @@ function clickHandler(e) {
         }
         else {
             var[ctr, nextDate] = getNextPalindromeDate(date);
-            
+
             resultRef.innerText = `The Next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days`;
         }
     }
